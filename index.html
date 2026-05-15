@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title">Катя и Звёзды — астролог, практик сюцай. Вильнюс</title>
+  <meta name="description" data-i18n-attr="content:meta.description" content="Персональные PDF-разборы натальной карты и китайских чисел сюцай. Понятно, тёпло, без эзотерических облаков.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    // ранний выбор темы — следуем системе, без вспышки и без localStorage
+    (function () {
+      try {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner container">
+    <a href="#top" class="nav__logo">Катя<span class="amp">&amp;</span>Звёзды</a>
+
+    <button class="nav__toggle" data-i18n-attr="aria-label:aria.menu" aria-label="Меню" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav__menu" id="primary-nav">
+      <a href="#story" data-i18n="nav.story">Моя история</a>
+      <a href="#approach" data-i18n="nav.approach">Подход</a>
+      <a href="#services" data-i18n="nav.services">Услуги</a>
+      <a href="#testimonials" data-i18n="nav.testimonials">Отзывы</a>
+      <a href="#contact" class="nav__cta" data-i18n="nav.cta">Записаться</a>
+    </nav>
+
+    <div class="lang-switcher" role="group" data-i18n-attr="aria-label:aria.langGroup" aria-label="Язык">
+      <button type="button" data-lang="ru">RU</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="lt">LT</button>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" data-i18n-attr="aria-label:aria.themeToggle" aria-label="Переключить тему">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__stars" aria-hidden="true">
+      <span class="star" style="--x:12%;--y:20%;--d:0s;--s:1"></span>
+      <span class="star" style="--x:28%;--y:70%;--d:1.4s;--s:.6"></span>
+      <span class="star" style="--x:92%;--y:30%;--d:2.8s;--s:.85"></span>
+      <span class="star" style="--x:78%;--y:78%;--d:4s;--s:.55"></span>
+      <span class="star" style="--x:48%;--y:8%;--d:5.2s;--s:.5"></span>
+      <span class="star" style="--x:8%;--y:55%;--d:.7s;--s:.45"></span>
+      <span class="star" style="--x:82%;--y:58%;--d:3.4s;--s:.7"></span>
+      <span class="star" style="--x:35%;--y:42%;--d:2s;--s:.4"></span>
+      <span class="star" style="--x:62%;--y:15%;--d:4.8s;--s:.55"></span>
+      <span class="star" style="--x:22%;--y:88%;--d:1s;--s:.5"></span>
+    </div>
+
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Астролог · практик сюцай · Вильнюс</p>
+        <h1 class="hero__title">Катя<span class="amp">&amp;</span>Звёзды</h1>
+        <p class="hero__lede" data-i18n="hero.lede">
+          Помогаю понять, почему у тебя именно такая жизнь — и что с этим делать.
+        </p>
+        <p class="hero__sub" data-i18n="hero.sub">
+          Натальная карта, китайские числа сюцай, твой характер — и честный разговор о том, куда ты идёшь.
+          Без эзотерических облаков и обещаний судьбы.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--pulse" href="#contact" data-i18n="hero.ctaPrimary">Записаться на разбор</a>
+          <a class="btn btn--ghost" href="#services" data-i18n="hero.ctaSecondary">Посмотреть услуги</a>
+        </div>
+      </div>
+
+      <div class="hero__photo">
+        <img
+          class="photo photo--portrait"
+          src="images/hero.jpg"
+          alt="Екатерина"
+          loading="eager"
+          decoding="async"
+          width="1050"
+          height="1400"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ МОЯ ИСТОРИЯ ============ -->
+  <section class="section" id="story">
+    <div class="container section__narrow">
+      <p class="eyebrow eyebrow--centered reveal" data-i18n="story.eyebrow">Моя история</p>
+      <h2 class="section__title reveal" data-delay="100" data-i18n="story.title">Привет, я Катя</h2>
+
+      <div class="story__photo reveal" data-delay="200">
+        <img
+          class="photo photo--square"
+          src="images/story.jpg"
+          alt="Екатерина"
+          loading="lazy"
+          decoding="async"
+          width="1050"
+          height="1400"
+        >
+      </div>
+
+      <div class="prose reveal" data-delay="300">
+        <p data-i18n="story.p1">
+          Рада, что ты здесь. Заглянуть на страницу к специалисту можно по разным
+          причинам: от поиска новых ориентиров до простого интереса узнать о себе
+          чуть больше.
+        </p>
+        <p data-i18n="story.p2">
+          Мой собственный путь начался в момент, когда мне самой потребовалась
+          твёрдая почва под ногами. Долгое время моей главной трудностью была жёсткая
+          самокритика — я была своим самым строгим судьёй. Всё изменилось, когда я
+          погрузилась в астрологию. Она буквально дала мне право быть собой, и это
+          знание принесло мне глубокое чувство самоценности. Теперь внешние мнения не
+          имеют значения — потому что я сама знаю свою ценность и ясно вижу свой путь.
+        </p>
+        <p data-i18n="story.p3">
+          Но мне всегда хотелось знать о человеке ещё больше и видеть все его грани.
+          Так я пришла к сюцай. Эти знания помогли мне ещё лучше слышать себя и дали
+          ответы на многие вопросы. При этом моё стремление видеть личность под разными
+          углами и давать максимум пользы постоянно ведёт меня дальше. Я не стою на
+          месте и продолжаю обучаться, находя новые механики для познания человека.
+        </p>
+        <p data-i18n="story.p4">
+          В своих разборах я объединяю две системы — астрологию и сюцай. Это позволяет
+          дать по-настоящему объёмный и глубокий взгляд на твою жизнь, помогая тебе
+          снова почувствовать свою силу.
+        </p>
+        <p data-i18n="story.p5">
+          Я здесь, чтобы помочь тебе найти точку опоры, если она вдруг потерялась —
+          или просто подсветить путь к твоим настоящим желаниям. Со мной путь к целям
+          становится понятнее, а жизнь — осознаннее и легче.
+        </p>
+        <p class="prose__cta" data-i18n-html="story.cta">
+          Если чувствуешь отклик — <a href="#services">загляни в раздел «Услуги»</a>,
+          подскажу, с чего удобнее начать.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ПОДХОД ============ -->
+  <section class="section section--night" id="approach">
+    <div class="hero__stars" aria-hidden="true">
+      <span class="star" style="--x:8%;--y:12%;--d:0s;--s:1"></span>
+      <span class="star" style="--x:22%;--y:72%;--d:1.5s;--s:.75"></span>
+      <span class="star" style="--x:92%;--y:22%;--d:3s;--s:.9"></span>
+      <span class="star" style="--x:78%;--y:82%;--d:4s;--s:.5"></span>
+      <span class="star" style="--x:46%;--y:8%;--d:5s;--s:.45"></span>
+      <span class="star" style="--x:15%;--y:35%;--d:.5s;--s:.55"></span>
+      <span class="star" style="--x:88%;--y:55%;--d:2s;--s:.7"></span>
+      <span class="star" style="--x:34%;--y:92%;--d:2.8s;--s:.4"></span>
+      <span class="star" style="--x:58%;--y:18%;--d:4.5s;--s:.6"></span>
+      <span class="star" style="--x:70%;--y:42%;--d:.8s;--s:.5"></span>
+      <span class="star" style="--x:5%;--y:78%;--d:3.2s;--s:.4"></span>
+      <span class="star" style="--x:95%;--y:88%;--d:1.8s;--s:.55"></span>
+      <span class="star" style="--x:42%;--y:58%;--d:4.2s;--s:.35"></span>
+      <span class="star" style="--x:66%;--y:72%;--d:2.3s;--s:.5"></span>
+    </div>
+
+    <div class="container section__narrow">
+      <p class="eyebrow eyebrow--centered reveal" data-i18n="approach.eyebrow">Мой подход</p>
+      <h2 class="section__title reveal" data-delay="100" data-i18n="approach.title">Астрология плюс сюцай — почему вместе</h2>
+
+      <div class="prose reveal" data-delay="200">
+        <p data-i18n="approach.lede">
+          В моей работе две системы. Одна западная, древняя и подробная. Другая —
+          восточная, лаконичная и точная по времени. По отдельности каждая из них
+          говорит важное, но половину.
+        </p>
+      </div>
+
+      <div class="approach-wrap">
+        <svg class="approach-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="16.67" y1="50" x2="50" y2="50"/>
+          <line x1="50" y1="50" x2="83.33" y2="50"/>
+        </svg>
+
+        <div class="approach-grid">
+          <div class="approach-card reveal" data-delay="100">
+            <span class="approach-card__num">i</span>
+            <h3 data-i18n="approach.card1.title">Астрология</h3>
+            <p data-i18n="approach.card1.body">
+              Натальная карта рассказывает, какой ты по рождению: характер,
+              темперамент, способ принимать решения, сильные стороны, болевые точки.
+              Это твой портрет — глубокий, но статичный.
+            </p>
+          </div>
+          <div class="approach-card reveal" data-delay="200">
+            <span class="approach-card__num">ii</span>
+            <h3 data-i18n="approach.card2.title">Сюцай</h3>
+            <p data-i18n="approach.card2.body">
+              Китайская цифровая психология. По дате рождения считаются числа, которые
+              показывают, как твой характер ведёт себя в реальной жизни — по годам, в
+              отношениях, в деньгах. Это твой календарь.
+            </p>
+          </div>
+          <div class="approach-card approach-card--accent reveal" data-delay="300">
+            <span class="approach-card__num">iii</span>
+            <h3 data-i18n="approach.card3.title">Вместе</h3>
+            <p data-i18n="approach.card3.body">
+              Астрология отвечает на вопрос «кто я?». Сюцай — «почему именно сейчас?».
+              Когда они сходятся, у тебя в руках не туманный прогноз, а понятная карта:
+              где ты, что в тебе сильно и какой год тебя ждёт.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ УСЛУГИ ============ -->
+  <section class="section" id="services">
+    <div class="container">
+      <p class="eyebrow eyebrow--centered reveal" data-i18n="services.eyebrow">Услуги</p>
+      <h2 class="section__title reveal" data-delay="100" data-i18n="services.title">Что можно у меня заказать</h2>
+      <p class="section__lede reveal" data-delay="200" data-i18n="services.lede">
+        Все разборы — персональный PDF на несколько страниц. По желанию добавлю
+        голосовое сопровождение в Telegram. Без спешки, без созвонов — твой документ,
+        к которому можно возвращаться.
+      </p>
+
+      <h3 class="services__group" data-i18n="services.groupSelf">Кто я</h3>
+      <div class="services-grid">
+
+        <article class="service-card tilt">
+          <h4 class="service-card__title" data-i18n="services.code.title">Код души</h4>
+          <p class="service-card__who" data-i18n="services.code.who">
+            Тебе сюда, если хочешь понять себя «изнутри» — почему ты реагируешь
+            именно так, в чём твоя настоящая сила и где привычные ловушки.
+          </p>
+          <ul class="service-card__list">
+            <li data-i18n="services.code.item1">Характер по натальной карте: темперамент, базовые сценарии, уязвимости.</li>
+            <li data-i18n="services.code.item2">Ключевые числа сюцай: как характер проявляется в решениях и привычках.</li>
+            <li data-i18n="services.code.item3">Точки опоры и зоны, где ты сама себе мешаешь.</li>
+          </ul>
+          <p class="service-card__format" data-i18n="services.formatStandard">PDF на несколько страниц · 5–7 дней</p>
+          <div class="service-card__foot">
+            <span class="service-card__price">40&nbsp;€</span>
+            <a class="btn btn--primary btn--sm" href="#contact" data-i18n="common.order" data-i18n-attr="data-service:services.code.shortName" data-service="Код души">Заказать</a>
+          </div>
+        </article>
+
+        <article class="service-card tilt">
+          <h4 class="service-card__title" data-i18n="services.path.title">Путь души</h4>
+          <p class="service-card__who" data-i18n="services.path.who">
+            Тебе сюда, если ты знаешь, кто ты, но не понимаешь, куда идёшь.
+            Про предназначение, точки силы и сценарии, которые тянутся годами.
+          </p>
+          <ul class="service-card__list">
+            <li data-i18n="services.path.item1">Лунные узлы и дома предназначения по натальной карте.</li>
+            <li data-i18n="services.path.item2">Долгие циклы жизни по сюцай — что включается и выключается в твоей биографии.</li>
+            <li data-i18n="services.path.item3">Темы, которые возвращаются, и почему именно к тебе.</li>
+          </ul>
+          <p class="service-card__format" data-i18n="services.formatStandard">PDF на несколько страниц · 5–7 дней</p>
+          <div class="service-card__foot">
+            <span class="service-card__price">35&nbsp;€</span>
+            <a class="btn btn--primary btn--sm" href="#contact" data-i18n="common.order" data-i18n-attr="data-service:services.path.shortName" data-service="Путь души">Заказать</a>
+          </div>
+        </article>
+
+        <article class="service-card service-card--accent tilt">
+          <p class="service-card__badge" data-i18n="services.portrait.badge">пакет · −10&nbsp;€</p>
+          <h4 class="service-card__title" data-i18n="services.portrait.title">Полный портрет</h4>
+          <p class="service-card__who" data-i18n="services.portrait.who">
+            «Код души» и «Путь души» вместе. Полная картина: кто ты по рождению
+            и куда ведёт твой путь. Два отдельных PDF, удобно читать по очереди.
+          </p>
+          <ul class="service-card__list">
+            <li data-i18n="services.portrait.item1">Всё, что входит в «Код души».</li>
+            <li data-i18n="services.portrait.item2">Всё, что входит в «Путь души».</li>
+            <li data-i18n="services.portrait.item3">Связки между ними — то, что видно только когда смотришь на оба разбора сразу.</li>
+          </ul>
+          <p class="service-card__format" data-i18n="services.formatPackage">Два PDF · 7–10 дней</p>
+          <div class="service-card__foot">
+            <span class="service-card__price">
+              <s>75&nbsp;€</s> 65&nbsp;€
+            </span>
+            <a class="btn btn--primary btn--sm" href="#contact" data-i18n="common.order" data-i18n-attr="data-service:services.portrait.shortName" data-service="Полный портрет (пакет)">Заказать</a>
+          </div>
+        </article>
+
+      </div>
+
+      <h3 class="services__group" data-i18n="services.groupFuture">Что меня ждёт</h3>
+      <div class="services-grid">
+
+        <article class="service-card tilt">
+          <h4 class="service-card__title" data-i18n="services.solar.title">Соляр — прогноз на год</h4>
+          <p class="service-card__who" data-i18n="services.solar.who">
+            Тебе сюда, если хочешь жить год не вслепую: знать сильные месяцы,
+            осторожные периоды и темы, которые сейчас активны.
+          </p>
+          <ul class="service-card__list">
+            <li data-i18n="services.solar.item1">Соляр — карта года: главные темы, важные периоды, поддержки.</li>
+            <li data-i18n="services.solar.item2">Годовой цикл сюцай — где силы много, где её надо беречь.</li>
+            <li data-i18n="services.solar.item3">Карта года по месяцам с конкретными темами и рекомендациями.</li>
+          </ul>
+          <p class="service-card__format" data-i18n="services.formatStandard">PDF на несколько страниц · 5–7 дней</p>
+          <div class="service-card__foot">
+            <span class="service-card__price">40&nbsp;€</span>
+            <a class="btn btn--primary btn--sm" href="#contact" data-i18n="common.order" data-i18n-attr="data-service:services.solar.shortName" data-service="Соляр (прогноз на год)">Заказать</a>
+          </div>
+        </article>
+
+        <article class="service-card tilt">
+          <h4 class="service-card__title" data-i18n="services.money.title">Карьера и деньги</h4>
+          <p class="service-card__who" data-i18n="services.money.who">
+            Тебе сюда, если ищешь дело по душе или хочешь понять, почему деньги
+            ведут себя в твоей жизни именно так.
+          </p>
+          <ul class="service-card__list">
+            <li data-i18n="services.money.item1">Дома работы, призвания и денег по натальной карте.</li>
+            <li data-i18n="services.money.item2">Сильные стороны для работы и типичные ошибки.</li>
+            <li data-i18n="services.money.item3">Денежные циклы по сюцай: когда копится, когда тратится, когда вкладываться.</li>
+          </ul>
+          <p class="service-card__format" data-i18n="services.formatStandard">PDF на несколько страниц · 5–7 дней</p>
+          <div class="service-card__foot">
+            <span class="service-card__price">35&nbsp;€</span>
+            <a class="btn btn--primary btn--sm" href="#contact" data-i18n="common.order" data-i18n-attr="data-service:services.money.shortName" data-service="Карьера и деньги">Заказать</a>
+          </div>
+        </article>
+
+        <article class="service-card service-card--accent tilt">
+          <p class="service-card__badge" data-i18n="services.yearAhead.badge">пакет · −15&nbsp;€</p>
+          <h4 class="service-card__title" data-i18n="services.yearAhead.title">Год вперёд</h4>
+          <p class="service-card__who" data-i18n="services.yearAhead.who">
+            «Соляр» и «Карьера и деньги» в одном пакете. Картина года плюс отдельный
+            фокус на работе и финансах — чтобы спланировать год объёмно.
+          </p>
+          <ul class="service-card__list">
+            <li data-i18n="services.yearAhead.item1">Всё, что входит в «Соляр».</li>
+            <li data-i18n="services.yearAhead.item2">Всё, что входит в «Карьера и деньги».</li>
+            <li data-i18n="services.yearAhead.item3">Сводка: где в году главные финансовые и рабочие точки.</li>
+          </ul>
+          <p class="service-card__format" data-i18n="services.formatPackage">Два PDF · 7–10 дней</p>
+          <div class="service-card__foot">
+            <span class="service-card__price">
+              <s>75&nbsp;€</s> 60&nbsp;€
+            </span>
+            <a class="btn btn--primary btn--sm" href="#contact" data-i18n="common.order" data-i18n-attr="data-service:services.yearAhead.shortName" data-service="Год вперёд (пакет)">Заказать</a>
+          </div>
+        </article>
+
+      </div>
+
+      <h3 class="services__group" data-i18n="services.groupOthers">Про близких</h3>
+      <div class="services-grid">
+
+        <article class="service-card tilt">
+          <h4 class="service-card__title" data-i18n="services.compat.title">Совместимость</h4>
+          <p class="service-card__who" data-i18n="services.compat.who">
+            Тебе сюда, если хочется понять связку с конкретным человеком —
+            партнёром, мамой, ребёнком, коллегой.
+          </p>
+          <ul class="service-card__list">
+            <li data-i18n="services.compat.item1">Синастрия натальных карт: где сходитесь, где трение, что вас держит.</li>
+            <li data-i18n="services.compat.item2">Сравнение чисел сюцай: как разворачивается ваше взаимодействие во времени.</li>
+            <li data-i18n="services.compat.item3">Мягкие практические рекомендации — что с этим делать.</li>
+          </ul>
+          <p class="service-card__format" data-i18n="services.formatStandard">PDF на несколько страниц · 5–7 дней</p>
+          <div class="service-card__foot">
+            <span class="service-card__price">25&nbsp;€</span>
+            <a class="btn btn--primary btn--sm" href="#contact" data-i18n="common.order" data-i18n-attr="data-service:services.compat.shortName" data-service="Совместимость">Заказать</a>
+          </div>
+        </article>
+
+        <article class="service-card tilt">
+          <h4 class="service-card__title" data-i18n="services.child.title">Разбор для ребёнка</h4>
+          <p class="service-card__who" data-i18n="services.child.who">
+            Тебе сюда, если хочется понять своего ребёнка, а не переделать его.
+            Какой он, что ему нужно, где помочь, а где отойти в сторону.
+          </p>
+          <ul class="service-card__list">
+            <li data-i18n="services.child.item1">Характер ребёнка: темперамент, как он(а) воспринимает мир.</li>
+            <li data-i18n="services.child.item2">Сильные стороны, способности и где ребёнку нужна поддержка.</li>
+            <li data-i18n="services.child.item3">Что делать родителю, чтобы помочь раскрыться, а не закрыться.</li>
+          </ul>
+          <p class="service-card__format" data-i18n="services.formatChild">PDF на несколько страниц · 2–3 дня</p>
+          <div class="service-card__foot">
+            <span class="service-card__price">25&nbsp;€</span>
+            <a class="btn btn--primary btn--sm" href="#contact" data-i18n="common.order" data-i18n-attr="data-service:services.child.shortName" data-service="Разбор для ребёнка">Заказать</a>
+          </div>
+        </article>
+
+        <article class="service-card service-card--accent tilt">
+          <p class="service-card__badge" data-i18n="services.iAndPartner.badge">пакет · −10&nbsp;€</p>
+          <h4 class="service-card__title" data-i18n="services.iAndPartner.title">Я и партнёр</h4>
+          <p class="service-card__who" data-i18n="services.iAndPartner.who">
+            «Код души» по тебе плюс «Совместимость» с твоим человеком. Сначала
+            понимаешь себя, потом — что между вами и почему именно так.
+          </p>
+          <ul class="service-card__list">
+            <li data-i18n="services.iAndPartner.item1">Всё, что входит в «Код души».</li>
+            <li data-i18n="services.iAndPartner.item2">Всё, что входит в «Совместимость».</li>
+            <li data-i18n="services.iAndPartner.item3">Какие твои особенности встречаются с какими особенностями партнёра.</li>
+          </ul>
+          <p class="service-card__format" data-i18n="services.formatPackage">Два PDF · 7–10 дней</p>
+          <div class="service-card__foot">
+            <span class="service-card__price">
+              <s>65&nbsp;€</s> 55&nbsp;€
+            </span>
+            <a class="btn btn--primary btn--sm" href="#contact" data-i18n="common.order" data-i18n-attr="data-service:services.iAndPartner.shortName" data-service="Я и партнёр (пакет)">Заказать</a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="services__hint reveal" data-i18n-html="services.hint">
+        Не знаешь, что выбрать? <a href="#contact">Напиши мне</a> — подскажу, с чего удобнее начать.
+        <br><span class="services__hint-sub">По желанию к любому PDF добавлю голосовое сопровождение в Telegram.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ ОТЗЫВЫ ============ -->
+  <section class="section section--tint" id="testimonials">
+    <div class="container">
+      <p class="eyebrow eyebrow--centered reveal" data-i18n="testimonials.eyebrow">Отзывы</p>
+      <h2 class="section__title reveal" data-delay="100" data-i18n="testimonials.title">Что говорят те, с кем я работала</h2>
+
+      <div class="testimonials-grid">
+        <figure class="testimonial">
+          <blockquote data-i18n="testimonials.t1">
+            «Катин разбор — это не астрология, а скорее очень точное зеркало.
+            Я впервые прочитала про себя так, как если бы говорил близкий человек,
+            который меня давно понимает.»
+          </blockquote>
+          <figcaption data-i18n="testimonials.t1Author">— Имя клиентки, город</figcaption>
+        </figure>
+
+        <figure class="testimonial">
+          <blockquote data-i18n="testimonials.t2">
+            «Брала разбор на год. К сентябрю поймала себя на том, что сверяюсь с её
+            PDF, как с навигатором — и почти всё совпадает. Без ощущения, что мне
+            что-то напророчили.»
+          </blockquote>
+          <figcaption data-i18n="testimonials.t2Author">— Имя клиентки, город</figcaption>
+        </figure>
+
+        <figure class="testimonial">
+          <blockquote data-i18n="testimonials.t3">
+            «Самое ценное — Катя пишет понятно. Никаких ретроградных Меркуриев и
+            намёков. Сел, прочитал, сделал выводы.»
+          </blockquote>
+          <figcaption data-i18n="testimonials.t3Author">— Имя клиента, город</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ КОНТАКТЫ ============ -->
+  <section class="section" id="contact">
+    <div class="container section__narrow">
+      <p class="eyebrow eyebrow--centered reveal" data-i18n="contact.eyebrow">Контакты</p>
+      <h2 class="section__title reveal" data-delay="100" data-i18n="contact.title">Записаться или просто написать</h2>
+      <p class="section__lede reveal" data-delay="200" data-i18n="contact.lede">
+        Удобнее всего — в мессенджере. Если хочется подумать и расписать запрос —
+        заполни форму ниже, она откроет письмо в твоей почте.
+      </p>
+
+      <div class="contact-buttons">
+        <a class="contact-btn" href="https://t.me/Murrzilkas" target="_blank" rel="noopener">
+          <span class="contact-btn__label" data-i18n="contact.btnTelegramLabel">Telegram</span>
+          <span class="contact-btn__handle">@Murrzilkas</span>
+        </a>
+        <a class="contact-btn" href="https://instagram.com/murrzilkas" target="_blank" rel="noopener">
+          <span class="contact-btn__label" data-i18n="contact.btnInstagramLabel">Instagram</span>
+          <span class="contact-btn__handle">@murrzilkas</span>
+        </a>
+        <a class="contact-btn" href="mailto:hello@katestars.com">
+          <span class="contact-btn__label" data-i18n="contact.btnEmailLabel">Email</span>
+          <span class="contact-btn__handle">hello@katestars.com</span>
+        </a>
+      </div>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="f-name" data-i18n="contact.nameLabel">Как тебя зовут</label>
+          <input id="f-name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="form-row">
+          <label for="f-contact" data-i18n-html="contact.contactLabel">Как с тобой связаться <span class="form-hint">(Telegram, email — что удобнее)</span></label>
+          <input id="f-contact" name="contact" type="text" required>
+        </div>
+        <div class="form-row">
+          <label for="f-service" data-i18n="contact.serviceLabel">Что интересует</label>
+          <select id="f-service" name="service">
+            <option value="" data-i18n="contact.serviceDefault">— выбери из списка —</option>
+            <optgroup data-i18n-attr="label:services.groupSelf" label="Кто я">
+              <option data-i18n="contact.opt.code">Код души — 40 €</option>
+              <option data-i18n="contact.opt.path">Путь души — 35 €</option>
+              <option data-i18n="contact.opt.portrait">Полный портрет (пакет) — 65 €</option>
+            </optgroup>
+            <optgroup data-i18n-attr="label:services.groupFuture" label="Что меня ждёт">
+              <option data-i18n="contact.opt.solar">Соляр (прогноз на год) — 40 €</option>
+              <option data-i18n="contact.opt.money">Карьера и деньги — 35 €</option>
+              <option data-i18n="contact.opt.yearAhead">Год вперёд (пакет) — 60 €</option>
+            </optgroup>
+            <optgroup data-i18n-attr="label:services.groupOthers" label="Про близких">
+              <option data-i18n="contact.opt.compat">Совместимость — 25 €</option>
+              <option data-i18n="contact.opt.child">Разбор для ребёнка — 25 €</option>
+              <option data-i18n="contact.opt.iAndPartner">Я и партнёр (пакет) — 55 €</option>
+            </optgroup>
+            <option data-i18n="contact.serviceUnsure">Пока не знаю, нужен совет</option>
+          </select>
+        </div>
+
+        <fieldset class="form-section" id="primaryDataSection">
+          <legend id="primaryDataLabel" data-i18n="contact.primaryDataLabel">Данные для разбора</legend>
+          <p class="form-section__hint" data-i18n="contact.primaryDataHint">
+            Дата и место — обязательно. Время — желательно, но если не знаешь, оставь пустым.
+          </p>
+          <div class="form-row">
+            <label for="f-birth-date" data-i18n="contact.birthDateLabel">Дата рождения</label>
+            <input id="f-birth-date" name="birth_date" type="text" data-i18n-attr="placeholder:contact.birthDatePlaceholder" placeholder="6 июня 1985">
+          </div>
+          <div class="form-row">
+            <label for="f-birth-time" data-i18n-html="contact.birthTimeLabel">Время рождения <span class="form-hint">(желательно)</span></label>
+            <input id="f-birth-time" name="birth_time" type="text" data-i18n-attr="placeholder:contact.birthTimePlaceholder" placeholder="14:45">
+          </div>
+          <div class="form-row">
+            <label for="f-birth-place" data-i18n="contact.birthPlaceLabel">Место рождения</label>
+            <input id="f-birth-place" name="birth_place" type="text" data-i18n-attr="placeholder:contact.birthPlacePlaceholder" placeholder="Лиссабон, Португалия">
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section" id="residenceSection" hidden>
+          <legend data-i18n="contact.residenceLegend">Где будешь жить большую часть года</legend>
+          <p class="form-section__hint" data-i18n="contact.residenceHint">
+            Для соляра важно место, где ты проведёшь больше шести месяцев запрашиваемого года.
+          </p>
+          <div class="form-row">
+            <label for="f-residence" data-i18n="contact.residenceLabel">Город и страна</label>
+            <input id="f-residence" name="residence" type="text" data-i18n-attr="placeholder:contact.residencePlaceholder" placeholder="Лиссабон, Португалия">
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section" id="partnerSection" hidden>
+          <legend data-i18n="contact.partnerLegend">Данные партнёра / второго человека</legend>
+          <p class="form-section__hint" data-i18n="contact.partnerHint">
+            Так же — дата и место обязательно, время желательно.
+          </p>
+          <div class="form-row">
+            <label for="f-partner-date" data-i18n="contact.birthDateLabel">Дата рождения</label>
+            <input id="f-partner-date" name="partner_birth_date" type="text" data-i18n-attr="placeholder:contact.partnerDatePlaceholder" placeholder="14 марта 1983">
+          </div>
+          <div class="form-row">
+            <label for="f-partner-time" data-i18n-html="contact.birthTimeLabel">Время рождения <span class="form-hint">(желательно)</span></label>
+            <input id="f-partner-time" name="partner_birth_time" type="text" data-i18n-attr="placeholder:contact.partnerTimePlaceholder" placeholder="08:20">
+          </div>
+          <div class="form-row">
+            <label for="f-partner-place" data-i18n="contact.birthPlaceLabel">Место рождения</label>
+            <input id="f-partner-place" name="partner_birth_place" type="text" data-i18n-attr="placeholder:contact.partnerPlacePlaceholder" placeholder="Тбилиси, Грузия">
+          </div>
+        </fieldset>
+
+        <div class="form-row">
+          <label for="f-message" data-i18n-html="contact.messageLabel">Пара слов о запросе <span class="form-hint">(необязательно)</span></label>
+          <textarea id="f-message" name="message" rows="4" data-i18n-attr="placeholder:contact.messagePlaceholder" placeholder="Что для тебя сейчас важнее всего понять?"></textarea>
+        </div>
+
+        <p class="form-consent" data-i18n="contact.consent">
+          Нажимая «Отправить», ты соглашаешься, что я могу написать тебе в ответ
+          по указанным контактам. Никаких рассылок и третьих лиц.
+        </p>
+        <button type="submit" class="btn btn--primary" data-i18n="contact.submit">Отправить</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__brand">Катя<span class="amp">&amp;</span>Звёзды</p>
+    <p class="footer__small" data-i18n-html="footer.sig">© <span id="year"></span> Екатерина · Вильнюс · сделано с теплом</p>
+    <nav class="footer__nav">
+      <a href="#story" data-i18n="footer.story">История</a>
+      <a href="#approach" data-i18n="nav.approach">Подход</a>
+      <a href="#services" data-i18n="nav.services">Услуги</a>
+      <a href="#contact" data-i18n="nav.contact">Контакты</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
