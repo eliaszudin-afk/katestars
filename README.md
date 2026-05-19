@@ -32,11 +32,38 @@ python3 -m http.server 8000
 описания — в `script.js` → `TR.ru/en/lt.services.<service>` (например
 `TR.ru.services.code` для «Код души»).
 
-### Добавить отзыв
+### Вернуть отзывы клиенток
 
-В `index.html` найди секцию `#testimonials`, скопируй блок `<figure class="testimonial">`,
-замени текст в `<blockquote>` и подпись в `<figcaption>` — и продублируй текст в
-`TR.ru/en/lt.testimonials.*`.
+Секция отзывов **сейчас выключена** — на сайте не было реальных, а фейк-плейсхолдеры
+вредят доверию. Когда Катя пришлёт 3–6 реальных цитат (можно анонимных вроде
+«К., Лиссабон»), их легко вернуть:
+
+1. В `index.html` после секции `#how` (см. ниже) вставить блок:
+   ```html
+   <section class="section" id="testimonials">
+     <div class="container">
+       <p class="eyebrow eyebrow--centered reveal" data-i18n="testimonials.eyebrow">Отзывы</p>
+       <h2 class="section__title reveal" data-delay="100" data-i18n="testimonials.title">Что говорят те, с кем я работала</h2>
+       <div class="testimonials-grid">
+         <figure class="testimonial">
+           <blockquote data-i18n="testimonials.t1">«…»</blockquote>
+           <figcaption data-i18n="testimonials.t1Author">— К., Лиссабон</figcaption>
+         </figure>
+         <!-- t2, t3, … -->
+       </div>
+     </div>
+   </section>
+   ```
+2. В `script.js` ключи `testimonials.*` уже есть во всех трёх языках — просто перепиши
+   тексты под реальные.
+3. В nav и footer-nav вернуть ссылку `<a href="#testimonials" data-i18n="nav.testimonials">Отзывы</a>`.
+
+### Шаги «Как это работает»
+
+Секция `#how` — четыре шага между «Услугами» и «Контактами». Контент в
+`TR.ru/en/lt.how.{eyebrow, title, s1.title, s1.body, …, s4.body}`. Если меняется
+срок ответа Кати (сейчас «24 часа»), способ оплаты (сейчас «удобным переводом»)
+или сроки PDF — поправь в этих ключах для всех трёх языков.
 
 ### Поменять email или Telegram
 

@@ -18,7 +18,7 @@
         themeToggle: 'Переключить тему',
         langGroup: 'Язык'
       },
-      nav: { story: 'Моя история', approach: 'Подход', services: 'Услуги', testimonials: 'Отзывы', cta: 'Записаться', contact: 'Контакты' },
+      nav: { story: 'Моя история', approach: 'Подход', services: 'Услуги', how: 'Как это работает', testimonials: 'Отзывы', cta: 'Записаться', contact: 'Контакты' },
       hero: {
         eyebrow: 'Астролог · практик сюцай · Вильнюс',
         lede: 'Помогаю понять, почему у тебя именно такая жизнь — и что с этим делать.',
@@ -75,6 +75,14 @@
         t3: '«Самое ценное — Катя пишет понятно. Никаких ретроградных Меркуриев и намёков. Сел, прочитал, сделал выводы.»',
         t3Author: '— Имя клиента, город'
       },
+      how: {
+        eyebrow: 'Как это работает',
+        title: 'Простой путь от запроса до PDF',
+        s1: { title: 'Напиши', body: 'Через форму или в Telegram. Форма открывает письмо в твоей почте — ничего не уходит автоматически.' },
+        s2: { title: 'Я отвечу', body: 'В течение 24 часов уточню пару деталей и подтвержу, какая услуга тебе подходит.' },
+        s3: { title: 'Оплата', body: 'Удобным переводом — детали обсудим в личной переписке. После подтверждения оплаты начинаю работу.' },
+        s4: { title: 'PDF', body: 'Готовый PDF приходит в Telegram или на email — за 5–7 дней (разбор ребёнка — 2–3 дня). По желанию — голосовое сопровождение.' }
+      },
       contact: {
         eyebrow: 'Контакты',
         title: 'Записаться или просто написать',
@@ -112,6 +120,7 @@
         messageLabel: 'Пара слов о запросе <span class="form-hint">(необязательно)</span>',
         messagePlaceholder: 'Что для тебя сейчас важнее всего понять?',
         consent: 'Нажимая «Отправить», ты соглашаешься, что я могу написать тебе в ответ по указанным контактам. Никаких рассылок и третьих лиц.',
+        submitHint: 'Откроется письмо в твоей почте — отправь его, и я отвечу в течение 24 часов.',
         submit: 'Отправить',
         statusMissing: 'Пожалуйста, заполни имя и контакт.',
         statusReady: 'Сейчас откроется почтовый клиент — нажми «Отправить» в нём.'
@@ -124,7 +133,7 @@
         sectionPartner: 'Данные партнёра',
         sectionMessage: 'О запросе'
       },
-      common: { order: 'Заказать' },
+      common: { order: 'Записаться' },
       footer: { sig: '© <span id="year"></span> Екатерина · Вильнюс · сделано с теплом', story: 'История' }
     },
 
@@ -134,7 +143,7 @@
         description: 'Personal PDF readings of natal charts and Chinese suucai numbers. Clear, warm, no esoteric fog.'
       },
       aria: { menu: 'Menu', themeToggle: 'Toggle theme', langGroup: 'Language' },
-      nav: { story: 'My story', approach: 'Approach', services: 'Services', testimonials: 'Reviews', cta: 'Get a reading', contact: 'Contacts' },
+      nav: { story: 'My story', approach: 'Approach', services: 'Services', how: 'How it works', testimonials: 'Reviews', cta: 'Get a reading', contact: 'Contacts' },
       hero: {
         eyebrow: 'Astrologer · suucai practitioner · Vilnius',
         lede: 'I help you understand why your life is the way it is — and what to do about it.',
@@ -191,6 +200,14 @@
         t3: '“The most valuable thing — Katya writes clearly. No retrograde Mercuries, no hints. You sit down, read, draw your conclusions.”',
         t3Author: '— Client name, city'
       },
+      how: {
+        eyebrow: 'How it works',
+        title: 'A simple path from request to PDF',
+        s1: { title: 'Write', body: 'Through the form or Telegram. The form opens an email in your client — nothing is sent automatically.' },
+        s2: { title: 'I reply', body: 'Within 24 hours I clarify a couple of details and confirm which reading fits.' },
+        s3: { title: 'Payment', body: 'A convenient transfer — details by direct message. Once payment is confirmed, I start the work.' },
+        s4: { title: 'PDF', body: 'The PDF arrives in Telegram or by email — within 5–7 days (child reading — 2–3 days). On request — audio commentary.' }
+      },
       contact: {
         eyebrow: 'Contacts',
         title: 'Get a reading or just say hi',
@@ -228,6 +245,7 @@
         messageLabel: 'A few words about your request <span class="form-hint">(optional)</span>',
         messagePlaceholder: 'What feels most important to understand right now?',
         consent: 'By clicking “Send” you agree that I may write back to you at the contacts provided. No newsletters, no third parties.',
+        submitHint: 'An email will open in your client — send it, and I’ll reply within 24 hours.',
         submit: 'Send',
         statusMissing: 'Please fill in your name and contact.',
         statusReady: 'The email client should open — press “Send” inside it.'
@@ -240,7 +258,7 @@
         sectionPartner: 'Partner data',
         sectionMessage: 'About the request'
       },
-      common: { order: 'Order' },
+      common: { order: 'Book' },
       footer: { sig: '© <span id="year"></span> Ekaterina · Vilnius · made with warmth', story: 'Story' }
     },
 
@@ -250,7 +268,7 @@
         description: 'Asmeniniai natalinės kortelės ir kinietiškųjų suucai skaičių PDF aprašymai. Aiškiai, šiltai, be ezoterinių miglų.'
       },
       aria: { menu: 'Meniu', themeToggle: 'Keisti temą', langGroup: 'Kalba' },
-      nav: { story: 'Mano istorija', approach: 'Požiūris', services: 'Paslaugos', testimonials: 'Atsiliepimai', cta: 'Užsisakyti', contact: 'Kontaktai' },
+      nav: { story: 'Mano istorija', approach: 'Požiūris', services: 'Paslaugos', how: 'Kaip tai veikia', testimonials: 'Atsiliepimai', cta: 'Užsisakyti', contact: 'Kontaktai' },
       hero: {
         eyebrow: 'Astrologė · suucai praktikė · Vilnius',
         lede: 'Padedu suprasti, kodėl tavo gyvenimas yra būtent toks — ir ką su tuo daryti.',
@@ -307,6 +325,14 @@
         t3: '„Vertingiausia — Katia rašo aiškiai. Jokio retrogradinio Merkurijaus ir užuominų. Atsisėdi, perskaitai, padarai išvadas.“',
         t3Author: '— Kliento vardas, miestas'
       },
+      how: {
+        eyebrow: 'Kaip tai veikia',
+        title: 'Paprastas kelias nuo užklausos iki PDF',
+        s1: { title: 'Parašyk', body: 'Per formą arba Telegram. Forma atvers laišką tavo el. pašte — niekas neišsiunčiama automatiškai.' },
+        s2: { title: 'Atsakau', body: 'Per 24 valandas patikslinu detales ir patvirtinu, kuri paslauga tau tinka.' },
+        s3: { title: 'Apmokėjimas', body: 'Patogus pavedimas — detales aptarsime asmeniškai. Patvirtinus apmokėjimą, pradedu darbą.' },
+        s4: { title: 'PDF', body: 'Paruoštas PDF ateina per Telegram arba el. paštu — per 5–7 dienas (vaiko aprašymas — 2–3 dienos). Pageidaujant — balso komentarai.' }
+      },
       contact: {
         eyebrow: 'Kontaktai',
         title: 'Užsisakyti arba tiesiog parašyti',
@@ -344,6 +370,7 @@
         messageLabel: 'Pora žodžių apie užklausą <span class="form-hint">(neprivaloma)</span>',
         messagePlaceholder: 'Ką dabar svarbiausia suprasti?',
         consent: 'Spausdama „Siųsti“ sutinki, kad galiu tau atrašyti pagal nurodytus kontaktus. Jokių naujienlaiškių ir trečiųjų šalių.',
+        submitHint: 'Atsivers laiškas tavo el. paštas — nusiųsk jį, ir aš atsakysiu per 24 valandas.',
         submit: 'Siųsti',
         statusMissing: 'Užpildyk vardą ir kontaktą.',
         statusReady: 'Iškart atsivers el. pašto klientas — spausk „Siųsti“ jame.'
@@ -356,7 +383,7 @@
         sectionPartner: 'Partnerio duomenys',
         sectionMessage: 'Apie užklausą'
       },
-      common: { order: 'Užsisakyti' },
+      common: { order: 'Užsirašyti' },
       footer: { sig: '© <span id="year"></span> Ekaterina · Vilnius · sukurta su šiluma', story: 'Istorija' }
     }
   };
@@ -621,6 +648,7 @@
   }
   tagGroup('.service-card');
   tagGroup('.testimonial');
+  tagGroup('.how-step');
   tagGroup('.contact-btn');
   tagGroup('.contact-form');
   tagGroup('.services__group');
