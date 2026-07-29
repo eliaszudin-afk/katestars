@@ -761,7 +761,7 @@
   // ============================================================
   //                       Отправка mailto
   // ============================================================
-  const TARGET_EMAIL = 'hello@katestars.com';
+  const TARGET_EMAIL = 'hello.katestars@gmail.com';
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
 

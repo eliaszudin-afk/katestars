@@ -67,7 +67,7 @@ python3 -m http.server 8000
 
 ### Поменять email или Telegram
 
-- Email-кнопка и форма: `index.html` → ищи `hello@katestars.com` (2 места) +
+- Email-кнопка и форма: `index.html` → ищи `hello.katestars@gmail.com` (2 места) +
   `script.js` → переменная `TARGET_EMAIL`.
 - Telegram-username: `index.html` → ищи `Murrzilkas`.
 
